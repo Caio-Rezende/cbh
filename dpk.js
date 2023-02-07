@@ -39,6 +39,7 @@ function validateCandidate(candidate) {
     candidate = hexHash(candidate);
   }
 
+  //valid candidate
   return candidate;
 }
 
