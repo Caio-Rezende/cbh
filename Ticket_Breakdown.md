@@ -18,29 +18,44 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 ## Your Breakdown Here
 
 - 0: Create relation table CustomAgentsIds
+
     Estimate: 20min
+
     Details: CustomAgentsIds is made of attributes:
             facilityId: Facility Id,
             agentId: Agent Id and
             customId: Custom Id for the Agent given by the Facility
+
         facilityId and agentId must be unique tuple, so should facilityId and customId
+
         facilityId must reference the Facility table
+
         agentId must reference the Agent table
+
     Acceptance: the table must be created in the database 
 
 - 1: Edit Create/Update for a Facility to enable setting the customId for each Agent linked to the Facility
+
     Estimate: 1h
+
     Acceptance: when a customId is set, there should be a new entry in the CustomAgentsIds table with the facilityId and agentId respective to the set customId
 
 - 2: Edit Delete methods of Facility and Agent to also delete references in the CustomAgentsIds, correspondingly
+
     Estimate: 20min
+
     Acceptance: when deleting Facility, must also delete all records from CustomAgentsIds where the facilityId is present
+
     Acceptance: when deleting Agent, must also delete all records from CustomAgentsIds where the agentId is present
 
 - 3: Add the customId from CustomAgentsId to the getShiftsByFacility, joining through the foreign keys
+
     Estimate: 15min
+
     Acceptance: amongst returned data, customId for an Agent should be present if there is a corresponding entry in CustomAgentsIds for the Facility and Agent
 
 - 4: Substitute the agent id in the generateReport to be the customId when its present
+
     Estimate: 10min
+    
     Acceptance: when a customId is present, it should be displayed in the report instead of the agentId
